@@ -175,7 +175,8 @@ public class YamlConfiguration extends FileConfiguration {
         try {
             config.load(file);
         } catch (IOException | InvalidConfigurationException ex) {
-            ConfigurationLogger.getLogger().error("Cannot load " + file, ex);
+            ConfigurationLogger.getLogger().error("Cannot load " + file);
+            ex.printStackTrace();
         }
 
         return config;
@@ -200,7 +201,8 @@ public class YamlConfiguration extends FileConfiguration {
         try {
             config.load(reader);
         } catch (IOException | InvalidConfigurationException ex) {
-            ConfigurationLogger.getLogger().error("Cannot load configuration from stream", ex);
+            ConfigurationLogger.getLogger().error("Cannot load configuration from stream");
+            ex.printStackTrace();
         }
 
         return config;
